@@ -28,13 +28,13 @@ class Menu {
     init() {
         mainMenu = NSMenu()
 
-        showSecondsItem = mainMenu.addItem(withTitle: "Show seconds", action: #selector(didChooseShowSeconds(_:)), keyEquivalent: "")
+        showSecondsItem = mainMenu.addItem(withTitle: NSLocalizedString("Show seconds", comment: "Menu item that can be toggled which indicates whether seconds are shown"), action: #selector(didChooseShowSeconds(_:)), keyEquivalent: "")
 
-        launchAtLoginItem = mainMenu.addItem(withTitle: "Launch at login", action: #selector(didChooseLaunchAtLogin(_:)), keyEquivalent: "")
+        launchAtLoginItem = mainMenu.addItem(withTitle: NSLocalizedString("Launch at login", comment: "Menu item that can be toggled which indicates whether the app will be launches at startup"), action: #selector(didChooseLaunchAtLogin(_:)), keyEquivalent: "")
 
         mainMenu.addItem(NSMenuItem.separator())
 
-        quitItem = mainMenu.addItem(withTitle: "Quit", action: #selector(didChooseQuit(_:)), keyEquivalent: "q")
+        quitItem = mainMenu.addItem(withTitle: NSLocalizedString("Quit", comment: "Menu item that causes the app to quit"), action: #selector(didChooseQuit(_:)), keyEquivalent: "q")
         quitItem.keyEquivalentModifierMask = [.command]
 
         showSecondsItem.target = self
