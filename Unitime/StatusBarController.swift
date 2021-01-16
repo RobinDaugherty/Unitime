@@ -75,23 +75,20 @@ class StatusBarController {
         updateDisplayedTime()
     }
 
-    private lazy var noSecondsDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.init(identifier: "UTC")
-        formatter.dateFormat = "yyyy-MM-DD HH:mm"
+    /// Use an ISO8601 formatter to ensure that no user preferences affect the way it formats the date/time.
+    private lazy var dateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.timeZone = TimeZone(identifier: "UTC")
+        formatter.formatOptions = [
+            .withFullDate,
+            .withDashSeparatorInDate,
+            .withSpaceBetweenDateAndTime,
+            .withTime,
+            .withColonSeparatorInTime,
+        ]
+
         return formatter
     }()
-
-    private lazy var withSecondsDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.init(identifier: "UTC")
-        formatter.dateFormat = "yyyy-MM-DD HH:mm:ss"
-        return formatter
-    }()
-
-    private var dateFormatter: DateFormatter {
-        showSeconds ? withSecondsDateFormatter : noSecondsDateFormatter
-    }
 
     private lazy var titleAttributes: [NSAttributedString.Key: Any] = {
         let smallSize = NSFont.systemFontSize(for: .small)
@@ -110,15 +107,22 @@ class StatusBarController {
 
         let nowSeconds = Date().timeIntervalSince1970
         let roundedNow: Date
-        // Rounded to the nearest minute/second so that the correct time is shown even if timer fires slightly before the second.
         if showSeconds || beforeFirstFullPeriod {
+            // Rounded to the nearest minute/second so that the correct time is shown even if timer fires slightly before the second.
             roundedNow = Date(timeIntervalSince1970: nowSeconds.rounded())
         } else {
+            // But if we round to the nearest minute when the app first launches, it might round up and show the "wrong" time until the timer ticks.
+            // So round to the nearest minute only when handling a timer tick.
             let nearestIntervalMinutes = (nowSeconds / 60).rounded()
             roundedNow = Date(timeIntervalSince1970: (nearestIntervalMinutes * 60))
         }
 
-        let text = NSAttributedString(string: dateFormatter.string(from: roundedNow), attributes: titleAttributes)
+        var dateString = dateFormatter.string(from: roundedNow)
+        if !showSeconds {
+            dateString.removeLast(3)
+        }
+
+        let text = NSAttributedString(string: dateString, attributes: titleAttributes)
         button.attributedTitle = text
     }
 
