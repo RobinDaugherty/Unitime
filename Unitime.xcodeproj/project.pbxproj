@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		069E5E0625B33CBF005D2766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E0525B33CBF005D2766 /* AppDelegate.swift */; };
+		069E5E0825B33CBF005D2766 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E0725B33CBF005D2766 /* ContentView.swift */; };
+		069E5E0A25B33CC0005D2766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069E5E0925B33CC0005D2766 /* Assets.xcassets */; };
+		069E5E0D25B33CC0005D2766 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069E5E0C25B33CC0005D2766 /* Preview Assets.xcassets */; };
+		069E5E1025B33CC0005D2766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069E5E0E25B33CC0005D2766 /* Main.storyboard */; };
+		069E5E1C25B33CC0005D2766 /* UnitimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E1B25B33CC0005D2766 /* UnitimeTests.swift */; };
+		069E5E2725B33CC0005D2766 /* UnitimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E2625B33CC0005D2766 /* UnitimeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		069E5E1825B33CC0005D2766 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 069E5DFA25B33CBF005D2766 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 069E5E0125B33CBF005D2766;
+			remoteInfo = Unitime;
+		};
+		069E5E2325B33CC0005D2766 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 069E5DFA25B33CBF005D2766 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 069E5E0125B33CBF005D2766;
+			remoteInfo = Unitime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		069E5E0225B33CBF005D2766 /* Unitime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unitime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		069E5E0525B33CBF005D2766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		069E5E0725B33CBF005D2766 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		069E5E0925B33CC0005D2766 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		069E5E0C25B33CC0005D2766 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		069E5E0F25B33CC0005D2766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		069E5E1125B33CC0005D2766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		069E5E1225B33CC0005D2766 /* Unitime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Unitime.entitlements; sourceTree = "<group>"; };
+		069E5E1725B33CC0005D2766 /* UnitimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		069E5E1B25B33CC0005D2766 /* UnitimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitimeTests.swift; sourceTree = "<group>"; };
+		069E5E1D25B33CC0005D2766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		069E5E2225B33CC0005D2766 /* UnitimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		069E5E2625B33CC0005D2766 /* UnitimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitimeUITests.swift; sourceTree = "<group>"; };
+		069E5E2825B33CC0005D2766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		069E5DFF25B33CBF005D2766 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		069E5E1425B33CC0005D2766 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		069E5E1F25B33CC0005D2766 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		069E5DF925B33CBF005D2766 = {
+			isa = PBXGroup;
+			children = (
+				069E5E0425B33CBF005D2766 /* Unitime */,
+				069E5E1A25B33CC0005D2766 /* UnitimeTests */,
+				069E5E2525B33CC0005D2766 /* UnitimeUITests */,
+				069E5E0325B33CBF005D2766 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		069E5E0325B33CBF005D2766 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				069E5E0225B33CBF005D2766 /* Unitime.app */,
+				069E5E1725B33CC0005D2766 /* UnitimeTests.xctest */,
+				069E5E2225B33CC0005D2766 /* UnitimeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		069E5E0425B33CBF005D2766 /* Unitime */ = {
+			isa = PBXGroup;
+			children = (
+				069E5E0525B33CBF005D2766 /* AppDelegate.swift */,
+				069E5E0725B33CBF005D2766 /* ContentView.swift */,
+				069E5E0925B33CC0005D2766 /* Assets.xcassets */,
+				069E5E0E25B33CC0005D2766 /* Main.storyboard */,
+				069E5E1125B33CC0005D2766 /* Info.plist */,
+				069E5E1225B33CC0005D2766 /* Unitime.entitlements */,
+				069E5E0B25B33CC0005D2766 /* Preview Content */,
+			);
+			path = Unitime;
+			sourceTree = "<group>";
+		};
+		069E5E0B25B33CC0005D2766 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				069E5E0C25B33CC0005D2766 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		069E5E1A25B33CC0005D2766 /* UnitimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				069E5E1B25B33CC0005D2766 /* UnitimeTests.swift */,
+				069E5E1D25B33CC0005D2766 /* Info.plist */,
+			);
+			path = UnitimeTests;
+			sourceTree = "<group>";
+		};
+		069E5E2525B33CC0005D2766 /* UnitimeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				069E5E2625B33CC0005D2766 /* UnitimeUITests.swift */,
+				069E5E2825B33CC0005D2766 /* Info.plist */,
+			);
+			path = UnitimeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		069E5E0125B33CBF005D2766 /* Unitime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 069E5E2B25B33CC0005D2766 /* Build configuration list for PBXNativeTarget "Unitime" */;
+			buildPhases = (
+				069E5DFE25B33CBF005D2766 /* Sources */,
+				069E5DFF25B33CBF005D2766 /* Frameworks */,
+				069E5E0025B33CBF005D2766 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Unitime;
+			productName = Unitime;
+			productReference = 069E5E0225B33CBF005D2766 /* Unitime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		069E5E1625B33CC0005D2766 /* UnitimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 069E5E2E25B33CC0005D2766 /* Build configuration list for PBXNativeTarget "UnitimeTests" */;
+			buildPhases = (
+				069E5E1325B33CC0005D2766 /* Sources */,
+				069E5E1425B33CC0005D2766 /* Frameworks */,
+				069E5E1525B33CC0005D2766 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				069E5E1925B33CC0005D2766 /* PBXTargetDependency */,
+			);
+			name = UnitimeTests;
+			productName = UnitimeTests;
+			productReference = 069E5E1725B33CC0005D2766 /* UnitimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		069E5E2125B33CC0005D2766 /* UnitimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 069E5E3125B33CC0005D2766 /* Build configuration list for PBXNativeTarget "UnitimeUITests" */;
+			buildPhases = (
+				069E5E1E25B33CC0005D2766 /* Sources */,
+				069E5E1F25B33CC0005D2766 /* Frameworks */,
+				069E5E2025B33CC0005D2766 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				069E5E2425B33CC0005D2766 /* PBXTargetDependency */,
+			);
+			name = UnitimeUITests;
+			productName = UnitimeUITests;
+			productReference = 069E5E2225B33CC0005D2766 /* UnitimeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		069E5DFA25B33CBF005D2766 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					069E5E0125B33CBF005D2766 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					069E5E1625B33CC0005D2766 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 069E5E0125B33CBF005D2766;
+					};
+					069E5E2125B33CC0005D2766 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 069E5E0125B33CBF005D2766;
+					};
+				};
+			};
+			buildConfigurationList = 069E5DFD25B33CBF005D2766 /* Build configuration list for PBXProject "Unitime" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 069E5DF925B33CBF005D2766;
+			productRefGroup = 069E5E0325B33CBF005D2766 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				069E5E0125B33CBF005D2766 /* Unitime */,
+				069E5E1625B33CC0005D2766 /* UnitimeTests */,
+				069E5E2125B33CC0005D2766 /* UnitimeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		069E5E0025B33CBF005D2766 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				069E5E1025B33CC0005D2766 /* Main.storyboard in Resources */,
+				069E5E0D25B33CC0005D2766 /* Preview Assets.xcassets in Resources */,
+				069E5E0A25B33CC0005D2766 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		069E5E1525B33CC0005D2766 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		069E5E2025B33CC0005D2766 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		069E5DFE25B33CBF005D2766 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				069E5E0825B33CBF005D2766 /* ContentView.swift in Sources */,
+				069E5E0625B33CBF005D2766 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		069E5E1325B33CC0005D2766 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				069E5E1C25B33CC0005D2766 /* UnitimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		069E5E1E25B33CC0005D2766 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				069E5E2725B33CC0005D2766 /* UnitimeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		069E5E1925B33CC0005D2766 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 069E5E0125B33CBF005D2766 /* Unitime */;
+			targetProxy = 069E5E1825B33CC0005D2766 /* PBXContainerItemProxy */;
+		};
+		069E5E2425B33CC0005D2766 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 069E5E0125B33CBF005D2766 /* Unitime */;
+			targetProxy = 069E5E2325B33CC0005D2766 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		069E5E0E25B33CC0005D2766 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				069E5E0F25B33CC0005D2766 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		069E5E2925B33CC0005D2766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		069E5E2A25B33CC0005D2766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		069E5E2C25B33CC0005D2766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Unitime/Unitime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Unitime/Preview Content\"";
+				DEVELOPMENT_TEAM = 366XCRJA25;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Unitime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = net.robindaugherty.Unitime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		069E5E2D25B33CC0005D2766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Unitime/Unitime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Unitime/Preview Content\"";
+				DEVELOPMENT_TEAM = 366XCRJA25;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Unitime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = net.robindaugherty.Unitime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		069E5E2F25B33CC0005D2766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 366XCRJA25;
+				INFOPLIST_FILE = UnitimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = net.robindaugherty.UnitimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unitime.app/Contents/MacOS/Unitime";
+			};
+			name = Debug;
+		};
+		069E5E3025B33CC0005D2766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 366XCRJA25;
+				INFOPLIST_FILE = UnitimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = net.robindaugherty.UnitimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unitime.app/Contents/MacOS/Unitime";
+			};
+			name = Release;
+		};
+		069E5E3225B33CC0005D2766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 366XCRJA25;
+				INFOPLIST_FILE = UnitimeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.robindaugherty.UnitimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Unitime;
+			};
+			name = Debug;
+		};
+		069E5E3325B33CC0005D2766 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 366XCRJA25;
+				INFOPLIST_FILE = UnitimeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.robindaugherty.UnitimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Unitime;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		069E5DFD25B33CBF005D2766 /* Build configuration list for PBXProject "Unitime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				069E5E2925B33CC0005D2766 /* Debug */,
+				069E5E2A25B33CC0005D2766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		069E5E2B25B33CC0005D2766 /* Build configuration list for PBXNativeTarget "Unitime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				069E5E2C25B33CC0005D2766 /* Debug */,
+				069E5E2D25B33CC0005D2766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		069E5E2E25B33CC0005D2766 /* Build configuration list for PBXNativeTarget "UnitimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				069E5E2F25B33CC0005D2766 /* Debug */,
+				069E5E3025B33CC0005D2766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		069E5E3125B33CC0005D2766 /* Build configuration list for PBXNativeTarget "UnitimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				069E5E3225B33CC0005D2766 /* Debug */,
+				069E5E3325B33CC0005D2766 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 069E5DFA25B33CBF005D2766 /* Project object */;
+}
