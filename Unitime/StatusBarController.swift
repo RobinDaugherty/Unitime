@@ -21,7 +21,8 @@ class StatusBarController {
 
     public var showSeconds: Bool = false {
         didSet {
-            // Just in case this value changes before 
+            updateDisplayedTime(beforeFirstFullPeriod: true)
+
             if runningTimer != nil {
                 self.scheduleTimer()
             }
@@ -61,7 +62,7 @@ class StatusBarController {
         let intervalUntilFirstTimer = timerPeriod - remainder
         debugPrint("the first interval expires in \(intervalUntilFirstTimer) seconds")
 
-        Timer.scheduledTimer(withTimeInterval: intervalUntilFirstTimer, repeats: false) { [self] timer in
+        runningTimer = Timer.scheduledTimer(withTimeInterval: intervalUntilFirstTimer, repeats: false) { [self] timer in
             debugPrint("first interval timer fired at \(debugLogDateFormatter.string(from: Date()))")
             updateDisplayedTime()
             runningTimer = Timer.scheduledTimer(timeInterval: timerPeriod, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
