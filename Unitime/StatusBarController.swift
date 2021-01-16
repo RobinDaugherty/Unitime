@@ -46,7 +46,7 @@ class StatusBarController {
     }
 
     public func start() {
-        updateDisplayedTime()
+        updateDisplayedTime(beforeFirstFullPeriod: true)
         scheduleTimer()
     }
 
@@ -62,7 +62,7 @@ class StatusBarController {
         let remainder = nowInterval.truncatingRemainder(dividingBy: timerPeriod)
         debugPrint("remainder until next timer period (\(timerPeriod)) is \(remainder)")
 
-        let intervalUntilFirstTimer = (timerPeriod - remainder)
+        let intervalUntilFirstTimer = timerPeriod - remainder
         debugPrint("the first interval expires in \(intervalUntilFirstTimer) seconds")
 
         Timer.scheduledTimer(withTimeInterval: intervalUntilFirstTimer, repeats: false) { [self] timer in
@@ -78,17 +78,39 @@ class StatusBarController {
         updateDisplayedTime()
     }
 
-    private func updateDisplayedTime() {
-        if let button = statusItem.button {
-            let formatter = DateFormatter()
-            formatter.timeZone = TimeZone.init(identifier: "UTC")
-            var format = "yyyy-MM-DD HH:mm"
-            if showSeconds {
-                format.append(":ss")
-            }
-            formatter.dateFormat = format
-            button.title = formatter.string(from: Date())
+    private lazy var noSecondsDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.init(identifier: "UTC")
+        formatter.dateFormat = "yyyy-MM-DD HH:mm"
+        return formatter
+    }()
+
+    private lazy var withSecondsDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.init(identifier: "UTC")
+        formatter.dateFormat = "yyyy-MM-DD HH:mm:ss"
+        return formatter
+    }()
+
+    private var dateFormatter: DateFormatter {
+        showSeconds ? withSecondsDateFormatter : noSecondsDateFormatter
+    }
+
+    /// If beforeFirstFullPeriod is true, the current time is shown rounded to the nearest second. When false, the time is rounded to nearest minute if showSeconds is disabled.
+    private func updateDisplayedTime(beforeFirstFullPeriod: Bool = false) {
+        guard let button = statusItem.button else { return }
+
+        let nowSeconds = Date().timeIntervalSince1970
+        let roundedNow: Date
+        // Rounded to the nearest minute/second so that the correct time is shown even if timer fires slightly before the second.
+        if showSeconds || beforeFirstFullPeriod {
+            roundedNow = Date(timeIntervalSince1970: nowSeconds.rounded())
+        } else {
+            let nearestIntervalMinutes = (nowSeconds / 60).rounded()
+            roundedNow = Date(timeIntervalSince1970: (nearestIntervalMinutes * 60))
         }
+
+        button.title = dateFormatter.string(from: roundedNow)
     }
 
 }
