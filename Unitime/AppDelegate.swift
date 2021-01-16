@@ -15,11 +15,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBar: StatusBarController!
     var menu: Menu!
 
+    var showSecondsSetting = Setting<Bool>(named: "showSeconds", defaultingTo: false)
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         menu = Menu()
         menu.delegate = self
 
         statusBar = StatusBarController(withMenu: menu.mainMenu)
+        statusBar.showSeconds = showSecondsSetting.value
         statusBar.start()
 
         menu.setShowSeconds(statusBar.showSeconds)
@@ -35,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension AppDelegate: MenuDelegate {
 
     func menuDidToggleShowSeconds() -> Bool {
-        let newValue = !statusBar.showSeconds
+        let newValue = showSecondsSetting.toggle()
         statusBar.showSeconds = newValue
         return newValue
     }

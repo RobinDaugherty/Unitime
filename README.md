@@ -7,4 +7,3 @@ Accurate and low-energy.
 ## To Do
 
 - [ ] Make sure App Nap is taking into account the visibility of the status bar.
-- [ ] Persist settings

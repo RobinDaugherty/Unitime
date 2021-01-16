@@ -16,6 +16,7 @@
 		06DB7AA425B35FB5000AE19F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB7AA325B35FB5000AE19F /* main.swift */; };
 		06DB7AC725B36C72000AE19F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB7AC625B36C72000AE19F /* Menu.swift */; };
 		06DB7ACD25B3A568000AE19F /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 06DB7ACC25B3A568000AE19F /* LaunchAtLogin */; };
+		06DB7AD625B3A9C0000AE19F /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB7AD525B3A9C0000AE19F /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		06DB7A9F25B35C1B000AE19F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		06DB7AA325B35FB5000AE19F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		06DB7AC625B36C72000AE19F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		06DB7AD525B3A9C0000AE19F /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				06DB7AA325B35FB5000AE19F /* main.swift */,
 				069E5E0B25B33CC0005D2766 /* Preview Content */,
 				06DB7AC625B36C72000AE19F /* Menu.swift */,
+				06DB7AD525B3A9C0000AE19F /* Setting.swift */,
 			);
 			path = Unitime;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DB7AD625B3A9C0000AE19F /* Setting.swift in Sources */,
 				069E5E3825B33CD0005D2766 /* StatusBarController.swift in Sources */,
 				069E5E0625B33CBF005D2766 /* AppDelegate.swift in Sources */,
 				06DB7AC725B36C72000AE19F /* Menu.swift in Sources */,
