@@ -93,6 +93,17 @@ class StatusBarController {
         showSeconds ? withSecondsDateFormatter : noSecondsDateFormatter
     }
 
+    private lazy var titleAttributes: [NSAttributedString.Key: Any] = {
+        let smallSize = NSFont.systemFontSize(for: .small)
+        let regularSize = NSFont.systemFontSize(for: .regular)
+        let mediumSize = (smallSize + regularSize) / 2
+        let font = NSFont.monospacedDigitSystemFont(ofSize: mediumSize, weight: .light)
+
+        return [
+            .font: font,
+        ]
+    }()
+
     /// If beforeFirstFullPeriod is true, the current time is shown rounded to the nearest second. When false, the time is rounded to nearest minute if showSeconds is disabled.
     private func updateDisplayedTime(beforeFirstFullPeriod: Bool = false) {
         guard let button = statusItem.button else { return }
@@ -107,7 +118,8 @@ class StatusBarController {
             roundedNow = Date(timeIntervalSince1970: (nearestIntervalMinutes * 60))
         }
 
-        button.title = dateFormatter.string(from: roundedNow)
+        let text = NSAttributedString(string: dateFormatter.string(from: roundedNow), attributes: titleAttributes)
+        button.attributedTitle = text
     }
 
 }
