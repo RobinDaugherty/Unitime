@@ -9,6 +9,12 @@ import AppKit
 
 class StatusBarController {
 
+    private lazy var debugLogDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss.SSSSSS"
+        return formatter
+    }()
+
     private var statusBar: NSStatusBar
 
     private var statusItem: NSStatusItem
@@ -41,15 +47,7 @@ class StatusBarController {
 
     public func start() {
         updateDisplayedTime()
-
-        let now = Date()
-        let intervalUntilFirstTimer = timerPeriod - now.timeIntervalSince1970.remainder(dividingBy: timerPeriod)
-        debugPrint("intervalUntilFirstTimer expired")
-        Timer.scheduledTimer(withTimeInterval: intervalUntilFirstTimer, repeats: false) { timer in
-            debugPrint("intervalUntilFirstTimer fired")
-            self.updateDisplayedTime()
-            self.scheduleTimer()
-        }
+        scheduleTimer()
     }
 
     private func scheduleTimer() {
@@ -57,11 +55,26 @@ class StatusBarController {
             existingTimer.invalidate()
         }
 
-        runningTimer = Timer.scheduledTimer(timeInterval: timerPeriod, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
+        let now = Date()
+        let nowInterval = now.timeIntervalSince1970
+        debugPrint("scheduleTimer() called at \(debugLogDateFormatter.string(from: now)): \(nowInterval)")
+
+        let remainder = nowInterval.truncatingRemainder(dividingBy: timerPeriod)
+        debugPrint("remainder until next timer period (\(timerPeriod)) is \(remainder)")
+
+        let intervalUntilFirstTimer = (timerPeriod - remainder)
+        debugPrint("the first interval expires in \(intervalUntilFirstTimer) seconds")
+
+        Timer.scheduledTimer(withTimeInterval: intervalUntilFirstTimer, repeats: false) { [self] timer in
+            debugPrint("first interval timer fired at \(debugLogDateFormatter.string(from: Date()))")
+            updateDisplayedTime()
+            runningTimer = Timer.scheduledTimer(timeInterval: timerPeriod, target: self, selector: #selector(timerFired(_:)), userInfo: nil, repeats: true)
+        }
     }
 
     @objc
     func timerFired(_ sender: Timer) {
+        debugPrint("interval timer fired at \(debugLogDateFormatter.string(from: Date()))")
         updateDisplayedTime()
     }
 
