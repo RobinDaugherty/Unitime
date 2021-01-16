@@ -48,6 +48,7 @@
 		069E5E2825B33CC0005D2766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		069E5E3725B33CD0005D2766 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		06DB7AA325B35FB5000AE19F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		06DB7A9F25B35C1B000AE19F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 		069E5DF925B33CBF005D2766 = {
 			isa = PBXGroup;
 			children = (
+				06DB7A9F25B35C1B000AE19F /* README.md */,
 				069E5E0425B33CBF005D2766 /* Unitime */,
 				069E5E1A25B33CC0005D2766 /* UnitimeTests */,
 				069E5E2525B33CC0005D2766 /* UnitimeUITests */,
