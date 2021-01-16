@@ -7,6 +7,7 @@
 
 import Cocoa
 import SwiftUI
+import LaunchAtLogin
 
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -22,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBar.start()
 
         menu.setShowSeconds(statusBar.showSeconds)
+        menu.setLaunchAtLogin(LaunchAtLogin.isEnabled)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -35,6 +37,12 @@ extension AppDelegate: MenuDelegate {
     func menuDidToggleShowSeconds() -> Bool {
         let newValue = !statusBar.showSeconds
         statusBar.showSeconds = newValue
+        return newValue
+    }
+
+    func menuDidToggleLaunchAtLogin() -> Bool {
+        let newValue = !LaunchAtLogin.isEnabled
+        LaunchAtLogin.isEnabled = newValue
         return newValue
     }
 

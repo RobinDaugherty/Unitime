@@ -8,4 +8,3 @@ Accurate and low-energy.
 
 - [ ] Make sure App Nap is taking into account the visibility of the status bar.
 - [ ] Persist settings
-- [ ] Add "Open at Startup" setting
