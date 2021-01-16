@@ -14,6 +14,7 @@
 		069E5E2725B33CC0005D2766 /* UnitimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E2625B33CC0005D2766 /* UnitimeUITests.swift */; };
 		069E5E3825B33CD0005D2766 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E3725B33CD0005D2766 /* StatusBarController.swift */; };
 		06DB7AA425B35FB5000AE19F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB7AA325B35FB5000AE19F /* main.swift */; };
+		06DB7AC725B36C72000AE19F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB7AC625B36C72000AE19F /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +48,9 @@
 		069E5E2625B33CC0005D2766 /* UnitimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitimeUITests.swift; sourceTree = "<group>"; };
 		069E5E2825B33CC0005D2766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		069E5E3725B33CD0005D2766 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
-		06DB7AA325B35FB5000AE19F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		06DB7A9F25B35C1B000AE19F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		06DB7AA325B35FB5000AE19F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		06DB7AC625B36C72000AE19F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				069E5E3725B33CD0005D2766 /* StatusBarController.swift */,
 				06DB7AA325B35FB5000AE19F /* main.swift */,
 				069E5E0B25B33CC0005D2766 /* Preview Content */,
+				06DB7AC625B36C72000AE19F /* Menu.swift */,
 			);
 			path = Unitime;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			files = (
 				069E5E3825B33CD0005D2766 /* StatusBarController.swift in Sources */,
 				069E5E0625B33CBF005D2766 /* AppDelegate.swift in Sources */,
+				06DB7AC725B36C72000AE19F /* Menu.swift in Sources */,
 				06DB7AA425B35FB5000AE19F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +440,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.robindaugherty.Unitime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -460,7 +464,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.robindaugherty.Unitime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

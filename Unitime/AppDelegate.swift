@@ -12,14 +12,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
     var statusBar: StatusBarController!
+    var menu: Menu!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusBar = StatusBarController()
+        menu = Menu()
+        menu.delegate = self
+
+        statusBar = StatusBarController(withMenu: menu.mainMenu)
         statusBar.start()
+
+        menu.setShowSeconds(statusBar.showSeconds)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+
+}
+
+extension AppDelegate: MenuDelegate {
+
+    func menuDidToggleShowSeconds() -> Bool {
+        let newValue = !statusBar.showSeconds
+        statusBar.showSeconds = newValue
+        return newValue
+    }
+
+    func menuDidChooseQuit() {
+        NSApp.terminate(nil)
     }
 
 }

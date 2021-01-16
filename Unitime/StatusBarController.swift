@@ -34,15 +34,11 @@ class StatusBarController {
         showSeconds ? 1 : 60
     }
 
-    init() {
+    init(withMenu menu: NSMenu) {
         statusBar = NSStatusBar()
 
         statusItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
-
-        if let button = statusItem.button {
-            button.title = "Unitime"
-        }
-
+        statusItem.menu = menu
     }
 
     public func start() {
