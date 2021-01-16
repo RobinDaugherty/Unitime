@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		069E5E0625B33CBF005D2766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E0525B33CBF005D2766 /* AppDelegate.swift */; };
-		069E5E0825B33CBF005D2766 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E0725B33CBF005D2766 /* ContentView.swift */; };
 		069E5E0A25B33CC0005D2766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069E5E0925B33CC0005D2766 /* Assets.xcassets */; };
 		069E5E0D25B33CC0005D2766 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069E5E0C25B33CC0005D2766 /* Preview Assets.xcassets */; };
 		069E5E1025B33CC0005D2766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069E5E0E25B33CC0005D2766 /* Main.storyboard */; };
 		069E5E1C25B33CC0005D2766 /* UnitimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E1B25B33CC0005D2766 /* UnitimeTests.swift */; };
 		069E5E2725B33CC0005D2766 /* UnitimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E2625B33CC0005D2766 /* UnitimeUITests.swift */; };
+		069E5E3825B33CD0005D2766 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E5E3725B33CD0005D2766 /* StatusBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		069E5E0225B33CBF005D2766 /* Unitime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unitime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069E5E0525B33CBF005D2766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		069E5E0725B33CBF005D2766 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		069E5E0925B33CC0005D2766 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		069E5E0C25B33CC0005D2766 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		069E5E0F25B33CC0005D2766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		069E5E2225B33CC0005D2766 /* UnitimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		069E5E2625B33CC0005D2766 /* UnitimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitimeUITests.swift; sourceTree = "<group>"; };
 		069E5E2825B33CC0005D2766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		069E5E3725B33CD0005D2766 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				069E5E0525B33CBF005D2766 /* AppDelegate.swift */,
-				069E5E0725B33CBF005D2766 /* ContentView.swift */,
 				069E5E0925B33CC0005D2766 /* Assets.xcassets */,
 				069E5E0E25B33CC0005D2766 /* Main.storyboard */,
 				069E5E1125B33CC0005D2766 /* Info.plist */,
 				069E5E1225B33CC0005D2766 /* Unitime.entitlements */,
+				069E5E3725B33CD0005D2766 /* StatusBarController.swift */,
 				069E5E0B25B33CC0005D2766 /* Preview Content */,
 			);
 			path = Unitime;
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				069E5E0825B33CBF005D2766 /* ContentView.swift in Sources */,
+				069E5E3825B33CD0005D2766 /* StatusBarController.swift in Sources */,
 				069E5E0625B33CBF005D2766 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
