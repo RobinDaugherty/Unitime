@@ -90,14 +90,24 @@ class StatusBarController {
         return formatter
     }()
 
-    private lazy var titleAttributes: [NSAttributedString.Key: Any] = {
+    private lazy var titleFont: NSFont = {
         let smallSize = NSFont.systemFontSize(for: .small)
         let regularSize = NSFont.systemFontSize(for: .regular)
         let mediumSize = (smallSize + regularSize) / 2
-        let font = NSFont.monospacedDigitSystemFont(ofSize: mediumSize, weight: .light)
+        return NSFont.monospacedDigitSystemFont(ofSize: mediumSize, weight: .light)
+    }()
+
+    private lazy var titleDeltaFont: NSFont = {
+        let smallSize = NSFont.systemFontSize(for: .small)
+        let regularSize = NSFont.systemFontSize(for: .regular)
+        let mediumSize = (smallSize + regularSize) / 2
+        return NSFont.monospacedDigitSystemFont(ofSize: mediumSize, weight: .bold)
+    }()
+
+    private lazy var titleAttributes: [NSAttributedString.Key: Any] = {
 
         return [
-            .font: font,
+            .font: titleFont,
         ]
     }()
 
@@ -117,12 +127,23 @@ class StatusBarController {
             now = Date().roundedToNearestMinute
         }
 
-        var dateString = dateFormatter.string(from: roundedNow)
+        var dateString = dateFormatter.string(from: now)
         if !showSeconds {
             dateString.removeLast(3)
         }
 
-        let text = NSAttributedString(string: dateString, attributes: titleAttributes)
+        let text = NSMutableAttributedString(string: dateString, attributes: titleAttributes)
+        let componentsThatDifferInUTC = now.componentsThatDifferInUTC
+        if componentsThatDifferInUTC.contains(.year) {
+            text.setAttributes([NSAttributedString.Key.font: titleDeltaFont], range: NSMakeRange(0, 4))
+        }
+        if componentsThatDifferInUTC.contains(.month) {
+            text.setAttributes([NSAttributedString.Key.font: titleDeltaFont], range: NSMakeRange(5, 2))
+        }
+        if componentsThatDifferInUTC.contains(.day) {
+            text.setAttributes([NSAttributedString.Key.font: titleDeltaFont], range: NSMakeRange(8, 2))
+        }
+
         button.attributedTitle = text
     }
 
@@ -137,6 +158,22 @@ extension Date {
 
     var roundedToNearestSecond: Date {
         return Date(timeIntervalSince1970: timeIntervalSince1970.rounded())
+    }
+
+    var componentsThatDifferInUTC: Set<Calendar.Component> {
+        let calendar = Calendar(identifier: .gregorian)
+        let utcZone = TimeZone(identifier: "UTC")!
+        let utcComponents = calendar.dateComponents(in: utcZone, from: self)
+        let localComponents = calendar.dateComponents([.year, .month, .day], from: self)
+
+        if utcComponents.year != localComponents.year {
+            return [.day, .month, .year]
+        } else if utcComponents.month != localComponents.month {
+            return [.day, .month]
+        } else if utcComponents.day != localComponents.day {
+            return [.day]
+        }
+        return []
     }
 
 }
