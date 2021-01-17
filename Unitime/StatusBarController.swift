@@ -105,16 +105,16 @@ class StatusBarController {
     private func updateDisplayedTime(beforeFirstFullPeriod: Bool = false) {
         guard let button = statusItem.button else { return }
 
-        let nowSeconds = Date().timeIntervalSince1970
-        let roundedNow: Date
+        let now: Date
         if showSeconds || beforeFirstFullPeriod {
             // Rounded to the nearest minute/second so that the correct time is shown even if timer fires slightly before the second.
-            roundedNow = Date(timeIntervalSince1970: nowSeconds.rounded())
+            now = Date().roundedToNearestSecond
         } else {
             // But if we round to the nearest minute when the app first launches, it might round up and show the "wrong" time until the timer ticks.
             // So round to the nearest minute only when handling a timer tick.
-            let nearestIntervalMinutes = (nowSeconds / 60).rounded()
-            roundedNow = Date(timeIntervalSince1970: (nearestIntervalMinutes * 60))
+            // Why round to the minute? Recurring timers seem to fire ahead and behind the exact time you'd expect.
+            // On longer timers, like 60 seconds, I have little confidence that they will fire on the right second, so second-rounding wouldn't be enough.
+            now = Date().roundedToNearestMinute
         }
 
         var dateString = dateFormatter.string(from: roundedNow)
@@ -124,6 +124,19 @@ class StatusBarController {
 
         let text = NSAttributedString(string: dateString, attributes: titleAttributes)
         button.attributedTitle = text
+    }
+
+}
+
+extension Date {
+
+    var roundedToNearestMinute: Date {
+        let nearestIntervalMinutes = (timeIntervalSince1970 / 60).rounded()
+        return Date(timeIntervalSince1970: (nearestIntervalMinutes * 60))
+    }
+
+    var roundedToNearestSecond: Date {
+        return Date(timeIntervalSince1970: timeIntervalSince1970.rounded())
     }
 
 }
