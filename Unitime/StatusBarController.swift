@@ -127,13 +127,15 @@ class StatusBarController {
             now = Date().roundedToNearestMinute
         }
 
-        var dateString = dateFormatter.string(from: now)
-        if !showSeconds {
-            dateString.removeLast(3)
-        }
+        button.attributedTitle = attributedTextForDate(now)
+    }
+
+    func attributedTextForDate(_ date: Date) -> NSAttributedString {
+        let dateString = dateFormatter.string(from: date, showingSeconds: showSeconds)
 
         let text = NSMutableAttributedString(string: dateString, attributes: titleAttributes)
-        let componentsThatDifferInUTC = now.componentsThatDifferInUTC
+        let componentsThatDifferInUTC = date.componentsThatDifferInUTC
+
         if componentsThatDifferInUTC.contains(.year) {
             text.setAttributes([NSAttributedString.Key.font: titleDeltaFont], range: NSMakeRange(0, 4))
         }
@@ -144,7 +146,7 @@ class StatusBarController {
             text.setAttributes([NSAttributedString.Key.font: titleDeltaFont], range: NSMakeRange(8, 2))
         }
 
-        button.attributedTitle = text
+        return text
     }
 
 }
@@ -174,6 +176,19 @@ extension Date {
             return [.day]
         }
         return []
+    }
+
+}
+
+extension ISO8601DateFormatter {
+
+    func string(from date: Date, showingSeconds: Bool) -> String {
+        let dateString: String = string(from: date)
+        if showingSeconds {
+            return dateString
+        } else {
+            return String(dateString[dateString.startIndex ..< dateString.index(dateString.endIndex, offsetBy: -3) ])
+        }
     }
 
 }
